@@ -1,0 +1,4 @@
+/public/libs/*
+/public/build/*
+/public/upload/*
+node_modules/
