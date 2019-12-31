@@ -19,3 +19,11 @@ db.users.find({})
 ## 改动权限
 db.users.update({name: 'admin'},{$set: {role: 51}})
 
+
+------------
+# 打包
+grunt build
+打包后的文件是public的build文件夹
+
+#
+
