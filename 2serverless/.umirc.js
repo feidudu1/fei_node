@@ -25,7 +25,7 @@ export default {
     {from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'},
   ],
   define: {
-    CESIUM_BASE_URL: JSON.stringify(''),
+    SERVICE_URL: ''
   },
   // proxy: {
   //   "/api": {

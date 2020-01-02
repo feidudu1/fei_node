@@ -24,26 +24,27 @@ class S1 extends Component {
 
   render () {
     const {
-      xiaoshanData
+      usersData
     } = this.props;
     return (
       <div className={style.main}>
+        {usersData}
         <V1 />
       </div>
     )
   }
 }
 
-// function mapStateToProps (state) {
-//   // console.log(555, state.s1.xiaoshanData);
-//   const {
-//     xiaoshanData
-//   } = state.s1
-//   return {
-//     xiaoshanData
-//   };
-// }
+function mapStateToProps (state) {
+  // console.log(555, state.s1.usersData);
+  const {
+    usersData
+  } = state.s1
+  return {
+    usersData
+  };
+}
 
- export default S1;
-// export default connect(mapStateToProps)(S1);
+//  export default S1;
+export default connect(mapStateToProps)(S1);
 //  export default withRouter(connect(mapStateToProps)(S4));

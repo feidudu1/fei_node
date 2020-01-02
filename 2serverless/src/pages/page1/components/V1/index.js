@@ -17,6 +17,7 @@ class SnowBall extends Component {
   render () {
     return (
       <div className="wrap_snowBall">
+        hi
         <div className={style.com_wrap_snowBall} />
       </div>
     );

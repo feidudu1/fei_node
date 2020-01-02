@@ -1,6 +1,5 @@
 import {
-  apiXiaoshan,
-  apiXiaoshanSingle
+  apiIndex,
 } from '../services/index';
 // import {
 
@@ -10,44 +9,34 @@ import {
 export default {
   namespace: 's1',
   state: {
-    xiaoshanData: [],
+    usersData: [],
 
   },
   reducers: { // 跟store相关
-    saveXiaoshanData (state, {payload: {xiaoshanData}}) {
-      return {...state, xiaoshanData};
+    saveUsers (state, {payload: {usersData}}) {
+      return {...state, usersData};
     },
 
   },
   effects: { // 跟server相关
-    *Xiaoshan ({payload: {isSingle}}, {call, put}) {
-      let data
-      if (isSingle) {
-        data = yield call(apiXiaoshanSingle)
+    *Users ({}, {call, put}) {
+      const {data} = yield call(apiIndex)
+      console.log(333, data);
+
         yield put({
-          type: 'saveXiaoshanData',
+          type: 'saveUsers',
           payload: {
-            xiaoshanData: data
+            usersData: data
           }
         });
-      } else {
-        data = yield call(apiXiaoshan)
-        yield put({
-          type: 'saveXiaoshanData',
-          payload: {
-            xiaoshanData: data
-            // xiaoshanData: data.slice(0, 2000)
-          }
-        });
-      }
     },
   },
   subscriptions: {
     setup ({dispatch, history}) {
       return history.listen(({pathname, query}) => {
-        if (pathname === '/s1') {
+        if (pathname === '/page1') {
           // 部门列表
-          dispatch({type: 'Xiaoshan', payload: {isSingle: true}});
+          dispatch({type: 'Users'});
         }
       });
     }

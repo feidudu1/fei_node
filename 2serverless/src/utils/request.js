@@ -13,6 +13,7 @@ const rightCodeNum = 20000;
 //     `${url}`
 // }
 
+axios.defaults.baseURL = SERVICE_URL
 axios.interceptors.response.use(
   // 加载动画, 处理权限
   // console.log('api处理权限');
