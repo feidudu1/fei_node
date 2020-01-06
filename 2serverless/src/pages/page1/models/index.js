@@ -21,8 +21,6 @@ export default {
   effects: { // 跟server相关
     *Users ({}, {call, put}) {
       const {data} = yield call(apiIndex)
-      console.log(333, data);
-
         yield put({
           type: 'saveUsers',
           payload: {

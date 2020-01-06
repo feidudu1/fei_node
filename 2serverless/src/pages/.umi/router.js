@@ -58,6 +58,25 @@ const routes = [
         _title_default: '资产管理系统',
       },
       {
+        path: '/page2',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              app: require('@tmp/dva').getApp(),
+              models: () => [
+                import('/Users/yafei/practice/fei_node/2serverless/src/pages/page2/models/index.js').then(
+                  m => {
+                    return { namespace: 'index', ...m.default };
+                  },
+                ),
+              ],
+              component: () => import('../page2/index.js'),
+            })
+          : require('../page2/index.js').default,
+        _title: '资产管理系统',
+        _title_default: '资产管理系统',
+      },
+      {
         component: () =>
           React.createElement(
             require('/Users/yafei/practice/fei_node/2serverless/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')

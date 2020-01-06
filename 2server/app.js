@@ -3,11 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const expressWs = require('express-ws')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var websocketRouter = require('./routes/websocket');
 
 var app = express();
+expressWs(app);
 
 // 设置跨域访问
 app.all('*', (req, res, next) => {
@@ -30,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/websocket', websocketRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
