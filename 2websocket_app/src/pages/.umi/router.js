@@ -45,7 +45,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import('/Users/yafei/practice/fei_node/2serverless/src/pages/page1/models/index.js').then(
+                import('/Users/yafei/practice/fei_node/2websocket_app/src/pages/page1/models/index.js').then(
                   m => {
                     return { namespace: 'index', ...m.default };
                   },
@@ -64,7 +64,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import('/Users/yafei/practice/fei_node/2serverless/src/pages/page2/models/index.js').then(
+                import('/Users/yafei/practice/fei_node/2websocket_app/src/pages/page2/models/index.js').then(
                   m => {
                     return { namespace: 'index', ...m.default };
                   },
@@ -79,7 +79,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/yafei/practice/fei_node/2serverless/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/Users/yafei/practice/fei_node/2websocket_app/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
@@ -93,7 +93,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/Users/yafei/practice/fei_node/2serverless/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('/Users/yafei/practice/fei_node/2websocket_app/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),
