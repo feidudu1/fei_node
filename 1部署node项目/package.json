@@ -22,7 +22,7 @@
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bson": "^4.0.2",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^1.0.0",
